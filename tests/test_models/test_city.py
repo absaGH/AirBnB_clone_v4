@@ -58,7 +58,7 @@ class TestCityDocs(unittest.TestCase):
 
 
 class TestCity(unittest.TestCase):
-    """Test the City class"""
+    """Test the City class Requirements"""
     def test_is_subclass(self):
         """Test that City is a subclass of BaseModel"""
         city = City()
