@@ -1,5 +1,5 @@
 # AirBnB Clone - The Console
-The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). Project attempts to clone the the AirBnB application and website, including the database, storage, RESTful API, Web Framework, and Front End. Currently the application is designed to run with 2 storage engine models: File Storage(/models/engine/file_storage.py) and Database Storage Engine(/models/engine/db_storage.py). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -11,6 +11,7 @@ The console is the first segment of the AirBnB project at Holberton School that 
 ## Table of Content
 * [Environment](#environment)
 * [Installation](#installation)
+* [How to setup the project](#setup)
 * [File Descriptions](#file-descriptions)
 * [Usage](#usage)
 * [Examples of use](#examples-of-use)
@@ -26,6 +27,23 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 * Access AirBnb directory: `cd AirBnB_clone`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
+
+## setup
+This project comes with various setup scripts to support automation, especially during maintanence or to scale the entire project. The following files are the setupfiles along with a brief explanation:
+* __dev/setup.sql__: Drops test and dev databases, and then reinitializes the database.
+  - Usage: $ cat dev/setup.sql | mysql -uroot -p
+* __setup_mysql_dev.sql__: initialiezs dev database with mysql for testing
+  - Usage: $ cat setup_mysql_dev.sql | mysql -uroot -p
+* __setup_mysql_test.sql__: initializes test database with mysql for testing
+  - Usage: $ cat setup_mysql_test.sql | mysql -uroot -p
+* __0-setup_web_static.sh__: sets up nginx web server config file & the file structure.
+  - Usage: $ sudo ./0-setup_web_static.sh
+* __3-deploy_web_static.py__: uses 2 functions from (1-pack_web_static.py & 2-do_deploy_web_static.py) that use the fabric3 python integration, to create a .tgz file on local host of all the local web static fils, and then calls the other function to deploy the compressed web static files. Command must be executed from the AirBnB_clone root directory.
+  - Usage: $ fab -f 3-deploy_web_static.py deploy -i ~/.ssh/holberton -u ubuntu
+* __Database Environmental Variables for tests__. To execute tests with the environmental variables prepend these declarations to the execution command:
+`$ HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db [COMMAND HERE]`
+
+
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
