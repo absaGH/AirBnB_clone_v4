@@ -1,5 +1,5 @@
-# AirBnB Clone - The Console
-The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). Project attempts to clone the the AirBnB application and website, including the database, storage, RESTful API, Web Framework, and Front End. Currently the application is designed to run with 2 storage engine models: File Storage(/models/engine/file_storage.py) and Database Storage Engine(/models/engine/db_storage.py). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+# AirBnB Clone
+The goal of AirBnB project is to eventually create and deploy to our server a simple copy of the AirBnB Website(HBnB). Project attempts to clone the the AirBnB application and website, including the database, storage, RESTful API, Web Framework, and Front End. Currently the application is designed to run with 2 storage engine models: File Storage(/models/engine/file_storage.py) and Database Storage Engine(/models/engine/db_storage.py). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
